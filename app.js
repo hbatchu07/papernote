@@ -8,7 +8,7 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var mongo = require('mongodb');
+var mongo = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://admin:abc123@ds039017.mlab.com:39017/papernote',{ useNewUrlParser: true });
@@ -86,7 +86,7 @@ app.use('/users', users);
 // Set Port
 //app.set('port', (process.env.PORT || 3000));
 
-//Set Port and Start Server
-//app.listen(app.get('port'), function(){
-//	console.log('Server started on port '+app.get('port'));
-//});
+Set Port and Start Server
+app.listen(app.get('port'), function(){
+console.log('Server started on port '+app.get('port'));
+});
