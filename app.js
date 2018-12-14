@@ -11,7 +11,8 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://admin:abc123@ds039017.mlab.com:39017/papernote');
+//mongoose.connect('mongodb://admin:abc123@ds039017.mlab.com:39017/papernote');
+mongoose.connect('mongodb://localhost/loginapp');
 var db = mongoose.connection;
 
 
@@ -79,6 +80,9 @@ app.use(function (req, res, next) {
 //Middleware Routes
 app.use('/', routes);
 app.use('/users', users);
+
+// Set Port
+app.set('port', (process.env.PORT || 3000));
 
 //Set Port and Start Server
 app.listen(app.get('port'), function(){
