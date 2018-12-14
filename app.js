@@ -11,10 +11,10 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://admin:abc123@ds039017.mlab.com:39017/papernote',{ useNewUrlParser: true });
+//mongoose.connect('mongodb://admin:abc123@ds039017.mlab.com:39017/papernote',{ useNewUrlParser: true });
 //mongoose.connect('mongodb://localhost/loginapp');
 
-//mongoose.connect("mongodb://localhost/loginapp", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/loginapp", { useNewUrlParser: true });
 var db = mongoose.connection;
 
 
@@ -84,9 +84,9 @@ app.use('/', routes);
 app.use('/users', users);
 
 // Set Port
-//app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 3000));
 
-Set Port and Start Server
+//Set Port and Start Server
 app.listen(app.get('port'), function(){
 console.log('Server started on port '+app.get('port'));
 });
