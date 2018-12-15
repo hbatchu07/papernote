@@ -1,9 +1,10 @@
 {
   "name": "loginapp",
   "version": "1.0.0",
-  "description": "Simple Authentication System",
+  "description": "Simple authentication system",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Hemanth Batchu",
@@ -15,9 +16,9 @@
     "cookie-parser": "^1.4.1",
     "express": "*",
     "express-handlebars": "*",
+    "express-messages": "*",
     "express-session": "*",
     "express-validator": "*",
-    "express-messages": "*",
     "mongodb": "*",
     "mongoose": "*",
     "passport": "*",
