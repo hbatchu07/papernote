@@ -11,12 +11,11 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 
-//mongoose.connect('mongodb://admin:abc123@ds039017.mlab.com:39017/papernote',{ useNewUrlParser: true });
+mongoose.connect('mongodb://admin:abc123@ds039017.mlab.com:39017/papernote',{ useNewUrlParser: true });
 //mongoose.connect('mongodb://localhost/loginapp');
 
-mongoose.connect("mongodb://localhost/loginapp", { useNewUrlParser: true });
+//mongoose.connect("mongodb://localhost/loginapp", { useNewUrlParser: true });
 var db = mongoose.connection;
-
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
